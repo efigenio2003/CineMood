@@ -1,41 +1,34 @@
 package com.example.teste;
 
+import android.content.Intent; // <-- 1. Importe a classe Intent
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textFrase;
-    Button botaoNovaFrase;
-
-    String[] frases = {
-            "Acredite nos seus sonhos.",
-            "Você é capaz de tudo que quiser.",
-            "Persista! O resultado vem com o tempo.",
-            "O esforço de hoje é o sucesso de amanhã.",
-            "Não desista. Grandes coisas levam tempo."
-    };
+    // ... (suas outras variáveis)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textFrase = findViewById(R.id.textFrase);
-        botaoNovaFrase = findViewById(R.id.botaoNovaFrase);
+        Button button6 = findViewById(R.id.button6);
 
-        botaoNovaFrase.setOnClickListener(v -> {
-            int index = new Random().nextInt(frases.length);
-            textFrase.setText(frases[index]);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 2. Crie uma Intent para abrir a SegundaTelaActivity
+                Intent intent = new Intent(MainActivity.this, SegundaTelaActivity.class);
+
+                // 3. Inicie a nova activity
+                startActivity(intent);
+            }
         });
     }
 }
