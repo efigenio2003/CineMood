@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.236" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/botaoTriste"
         android:layout_width="114dp"
         android:layout_height="41dp"
         android:backgroundTint="#84FFFFFF"
@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="0.563" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/botaoBravo"
         android:layout_width="114dp"
         android:layout_height="41dp"
         android:backgroundTint="#83F4F8F8"
@@ -128,7 +128,7 @@
         app:layout_constraintVertical_bias="0.834" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/botaoEntediado"
         android:layout_width="114dp"
         android:layout_height="41dp"
         android:backgroundTint="#7CFFFFFF"
@@ -142,7 +142,7 @@
         app:layout_constraintVertical_bias="0.834" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/botaoFavoritos"
         android:layout_width="47dp"
         android:layout_height="52dp"
         android:background="#00FFFFFF"
@@ -155,7 +155,7 @@
         app:srcCompat="@drawable/heart" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/botaoHome"
         android:layout_width="47dp"
         android:layout_height="52dp"
         android:background="#00FFFFFF"
@@ -167,7 +167,7 @@
         app:srcCompat="@drawable/home" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/botaoPerfil"
         android:layout_width="47dp"
         android:layout_height="52dp"
         android:background="#00FFFFFF"
@@ -180,7 +180,7 @@
         app:srcCompat="@drawable/user" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/botaoFeliz"
         android:layout_width="114dp"
         android:layout_height="41dp"
         android:backgroundTint="#8FFFFFFF"
