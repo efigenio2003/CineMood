@@ -3,36 +3,75 @@ package com.example.teste;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton; // Importação correta para ImageButton
+import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TelaFelizActivity extends AppCompatActivity {
+
+    private boolean isFavorited1 = false;
+    private boolean isFavorited2 = false;
+    private boolean isFavorited3 = false;
+    private boolean isFavorited4 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_feliz);
 
-        // 1. Encontrar o ImageButton pelo ID que você definiu no XML
         ImageButton botaoHome = findViewById(R.id.botaoHome);
+        ImageButton botaoFav1 = findViewById(R.id.botaoFav1);
+        ImageButton botaoFav2 = findViewById(R.id.botaoFav2);
+        ImageButton botaoFav3 = findViewById(R.id.botaoFav3);
+        ImageButton botaoFav4 = findViewById(R.id.botaoFav4);
 
-        // 2. Configurar o listener de clique para o botão
         botaoHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 3. Criar uma Intent para abrir a MainActivity (sua tela principal)
                 Intent intent = new Intent(TelaFelizActivity.this, MainActivity.class);
-
-                // Opcional: Limpa o histórico de telas para que o usuário não volte
-                // para a TelaFelizActivity ao pressionar o botão "Voltar" do celular.
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                // 4. Iniciar a Activity principal
                 startActivity(intent);
-
-                // 5. Finalizar a Activity atual para que o usuário não possa voltar para ela
                 finish();
             }
         });
+
+        setupFavoriteButton(botaoFav1, 1);
+        setupFavoriteButton(botaoFav2, 2);
+        setupFavoriteButton(botaoFav3, 3);
+        setupFavoriteButton(botaoFav4, 4);
+    }
+
+    private void setupFavoriteButton(ImageButton button, final int buttonId) {
+        if (button != null) {
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    boolean currentState = false;
+                    switch (buttonId) {
+                        case 1:
+                            isFavorited1 = !isFavorited1;
+                            currentState = isFavorited1;
+                            break;
+                        case 2:
+                            isFavorited2 = !isFavorited2;
+                            currentState = isFavorited2;
+                            break;
+                        case 3:
+                            isFavorited3 = !isFavorited3;
+                            currentState = isFavorited3;
+                            break;
+                        case 4:
+                            isFavorited4 = !isFavorited4;
+                            currentState = isFavorited4;
+                            break;
+                    }
+
+                    if (currentState) {
+                        button.setImageResource(R.drawable.fav2);
+                    } else {
+                        button.setImageResource(R.drawable.fav1);
+                    }
+                }
+            });
+        }
     }
 }

@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         // Botão Entediado
         View botaoEntediadoImagem = findViewById(R.id.opcaoEntediado);
         Button botaoEntediadoTexto = findViewById(R.id.botaoEntediado);
+        
+        // Botão Perfil
+        ImageButton botaoPerfil = findViewById(R.id.botaoPerfil);
 
 
         // --- CONFIGURAÇÃO DOS LISTENERS ---
@@ -81,5 +84,16 @@ public class MainActivity extends AppCompatActivity {
         };
         botaoEntediadoImagem.setOnClickListener(listenerEntediado);
         botaoEntediadoTexto.setOnClickListener(listenerEntediado);
+        
+        // Listener para o botão PERFIL
+        if (botaoPerfil != null) {
+            botaoPerfil.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, TelaPerfilActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 }
