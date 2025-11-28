@@ -18,15 +18,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundo__1_" />
 
-    <ImageView
-        android:id="@+id/imageFotoPerfil"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPerfil"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="64dp"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageFotoPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/user" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textNomePerfil"
@@ -39,7 +49,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFotoPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewPerfil" />
 
     <TextView
         android:id="@+id/textEmailPerfil"
@@ -62,6 +72,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEmailPerfil" />
+
+    <!-- Botão de Deslogar (Logout) -->
+    <Button
+        android:id="@+id/botaoLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sair da Conta"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
         
     <ImageButton
         android:id="@+id/botaoHome"

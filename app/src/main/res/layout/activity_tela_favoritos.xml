@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFCFC"
+    tools:context=".TelaFavoritosActivity">
+
+    <ImageView
+        android:id="@+id/imageFundoFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundo__1_" />
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Meus Favoritos"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/botaoHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- === FELIZ === -->
+            <LinearLayout android:id="@+id/layoutFilme1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/feliz_1" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mamma Mia!" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilme2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/the_devil_wears_prada___filme" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="O Diabo Veste Prada" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilme3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/white_chicks" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="As Branquelas" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilme4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/o_grande_hotel_budapeste_poster_no_brasil_wk" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="O Grande Hotel Budapeste" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <!-- === TRISTE === -->
+            <LinearLayout android:id="@+id/layoutFilmeSad1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/la_vita___bella" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A Vida é Bela" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeSad2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/marley_me_2008" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Marley &amp; Eu" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeSad3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/as_vantagens_de_ser_invisivel" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="As Vantagens de ser Invisível" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeSad4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/big_fish" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Peixe Grande" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <!-- === BRAVO === -->
+            <LinearLayout android:id="@+id/layoutFilmeAngry1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/fightclubposter" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clube da Luta" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeAngry2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/john_wick_teaserposter" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="John Wick" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeAngry3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/kill_bill_volume_1" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kill Bill: Vol. 1" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeAngry4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/mad_max_fury_road" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mad Max: F. Road" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <!-- === ENTEDIADO === -->
+            <LinearLayout android:id="@+id/layoutFilmeBored1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/aorigemposter" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A Origem" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeBored2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/scott_pilgrim_vs__the_world_teaser" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Scott Pilgrim" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeBored3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/inglourious_basterds_ver9" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bastardos Inglórios" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/layoutFilmeBored4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp" android:visibility="gone">
+                <ImageView android:layout_width="80dp" android:layout_height="120dp" app:srcCompat="@drawable/o_jogo_da_imita__o" android:scaleType="centerCrop"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="O Jogo da Imitação" android:textSize="18sp" android:textStyle="bold" android:layout_marginLeft="16dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textVazio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nenhum favorito ainda."
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textColor="#888888"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/botaoHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.teste;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -18,11 +19,24 @@ public class TelaFelizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_feliz);
 
+        // Recuperar estado salvo
+        SharedPreferences prefs = getSharedPreferences("MeusFavoritos", MODE_PRIVATE);
+        isFavorited1 = prefs.getBoolean("fav_1", false);
+        isFavorited2 = prefs.getBoolean("fav_2", false);
+        isFavorited3 = prefs.getBoolean("fav_3", false);
+        isFavorited4 = prefs.getBoolean("fav_4", false);
+
         ImageButton botaoHome = findViewById(R.id.botaoHome);
         ImageButton botaoFav1 = findViewById(R.id.botaoFav1);
         ImageButton botaoFav2 = findViewById(R.id.botaoFav2);
         ImageButton botaoFav3 = findViewById(R.id.botaoFav3);
         ImageButton botaoFav4 = findViewById(R.id.botaoFav4);
+
+        // Atualizar ícones iniciais
+        updateButtonIcon(botaoFav1, isFavorited1);
+        updateButtonIcon(botaoFav2, isFavorited2);
+        updateButtonIcon(botaoFav3, isFavorited3);
+        updateButtonIcon(botaoFav4, isFavorited4);
 
         botaoHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,13 +79,25 @@ public class TelaFelizActivity extends AppCompatActivity {
                             break;
                     }
 
-                    if (currentState) {
-                        button.setImageResource(R.drawable.fav2);
-                    } else {
-                        button.setImageResource(R.drawable.fav1);
-                    }
+                    // Salvar no SharedPreferences
+                    SharedPreferences prefs = getSharedPreferences("MeusFavoritos", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putBoolean("fav_" + buttonId, currentState);
+                    editor.apply();
+
+                    updateButtonIcon(button, currentState);
                 }
             });
+        }
+    }
+
+    private void updateButtonIcon(ImageButton button, boolean isFavorited) {
+        if (button != null) {
+            if (isFavorited) {
+                button.setImageResource(R.drawable.fav2);
+            } else {
+                button.setImageResource(R.drawable.fav1);
+            }
         }
     }
 }
